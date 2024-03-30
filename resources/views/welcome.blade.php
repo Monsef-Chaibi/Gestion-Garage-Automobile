@@ -54,6 +54,11 @@
 						</span>
 					</div>
 
+                    <div class="mt-[10px]">
+                        <input type="checkbox" class="ml-[1.7rem] text-[13px]" name="" id="Remember-Me">
+                        <label for="Remember-Me" class="font-[Poppins-Regular] text-[13px] text-gray-500">Remember Me</label>
+                    </div>
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
