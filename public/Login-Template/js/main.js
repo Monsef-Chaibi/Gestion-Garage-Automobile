@@ -56,22 +56,3 @@
 
 })(jQuery);
 
-document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const signupLink = document.getElementById('signup-link');
-    const signinLink = document.getElementById('signin-link');
-
-    signupLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'flex';
-    });
-
-    signinLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        signupForm.style.display = 'none';
-        loginForm.style.display = 'flex';
-    });
-});
-

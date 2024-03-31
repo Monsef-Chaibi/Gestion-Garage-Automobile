@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Repair extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'description', 'status', 'startDate', 'endDate', 'mechanicNotes', 'clientNotes', 'mechanicID', 'vehicleID',
+    ];
 }

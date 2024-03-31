@@ -19,4 +19,7 @@ class Vehicle extends Model
         return $this->belongsTo(User::class, 'clientID');
     }
 
+    protected $fillable = [
+        'make', 'model', 'fuelType', 'registration', 'photos', 'clientID',
+    ];
 }
