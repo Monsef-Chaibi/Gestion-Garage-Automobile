@@ -45,3 +45,22 @@ Route::get('/User-Dash', [UserController::class, 'UserDash'])->name('UserDash');
 Route::get('/Admin-Dash', [AdminController::class, 'AdminDash'])->name('AdminDash');
 
 Route::get('/Client-Dash', [AdminController::class, 'ClientDash'])->name('ClientDash');
+
+Route::get('/Voiture-Dash', [AdminController::class, 'VoitureDash'])->name('VoitureDash');
+
+Route::post('/update-user', [AdminController::class, 'update'])->name('user.update');
+
+Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('users.destroy');
+
+Route::post('/vehicles', [AdminController::class, 'storeVehicle'])->name('vehicles.store');
+
+Route::get('/vehicle-info/{id}', [AdminController::class, 'show'])->name('vehicle.info');
+
+Route::delete('/delete-photo/{vehicleId}/{photoIndex}', [AdminController::class, 'DeleteImgVehicle'])->name('photo.delete');
+
+Route::post('/update-vehicle/{vehicle}', [AdminController::class, 'updateVehicle'])->name('vehicle.update');
+
+Route::delete('/Vehicle/Delete/{vehicle}', [AdminController::class, 'DestroyVehicle'])->name('vehicles.destroy');
+
+
+
