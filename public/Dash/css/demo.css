@@ -10,6 +10,27 @@
 .blur-effect {
     filter: blur(4px);
   }
+  .nav-item {
+    position: relative; /* Ensure this container has a relative positioning context */
+  }
+
+  .search-results {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 136%; /* Make sure it starts right after the input */
+    left: 0;
+    width: 100%; /* Match the width of the input */
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .search-results div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
 
 .lds-roller,
 .lds-roller div,

@@ -116,18 +116,25 @@
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
+                <!-- Search -->
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                  <!-- Search -->
+                  <div class="navbar-nav align-items-center">
+                      <div class="nav-item d-flex align-items-center">
+                        <i class="bx bx-search fs-4 lh-0"></i>
+                        <input
+                          type="text"
+                          id="vehicleSearchInput"
+                          class="form-control border-0 shadow-none"
+                          placeholder="Search..."
+                          aria-label="Search..."
+                        />
+                        <!-- Results will be displayed in this div -->
+                        <div id="searchResultsContainer" class="search-results"></div>
+                      </div>
+                    </div>
+
                 </div>
-              </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">

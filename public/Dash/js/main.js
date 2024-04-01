@@ -116,3 +116,41 @@ let menu, animate;
   // Auto update menu collapsed/expanded based on the themeConfig
   window.Helpers.setCollapsed(true, false);
 })();
+//Search script
+$(document).ready(function() {
+    $('#vehicleSearchInput').on('input', function() {
+      var query = $(this).val();
+
+      // Only proceed if the query is not empty
+      if (query.length > 0) {
+        $.ajax({
+          url: '/search/vehicles',
+          data: { query: query },
+          success: function(data) {
+            var resultsContainer = $('#searchResultsContainer');
+            resultsContainer.empty(); // Clear previous results
+
+            if (data.length > 0) {
+              // Populate and show the results container
+              $.each(data, function(i, vehicle) {
+                resultsContainer.append('<div>' + vehicle.make + ' ' + vehicle.model + '</div>');
+              });
+              resultsContainer.show();
+            } else {
+              // Hide the results container if no results
+              resultsContainer.hide();
+            }
+          }
+        });
+      } else {
+        $('#searchResultsContainer').hide(); // Hide the results container if query is empty
+      }
+    });
+
+    // Hide results when clicking outside
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('#vehicleSearchInput, #searchResultsContainer').length) {
+        $('#searchResultsContainer').hide();
+      }
+    });
+  });

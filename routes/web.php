@@ -62,5 +62,6 @@ Route::post('/update-vehicle/{vehicle}', [AdminController::class, 'updateVehicle
 
 Route::delete('/Vehicle/Delete/{vehicle}', [AdminController::class, 'DestroyVehicle'])->name('vehicles.destroy');
 
+Route::get('/search/vehicles', [AdminController::class, 'search'])->name('vehicles.search');
 
 

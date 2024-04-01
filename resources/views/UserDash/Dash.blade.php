@@ -110,17 +110,18 @@
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                <!-- Search -->
-                <div class="navbar-nav align-items-center">
-                  <div class="nav-item d-flex align-items-center">
-                    <i class="bx bx-search fs-4 lh-0"></i>
-                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." id="vehicleSearchInput" />
-                  </div>
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
                 </div>
               </div>
-
-              <!-- Div to display search results -->
-              <div id="searchResults"></div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -285,50 +286,3 @@
 
   </body>
 </html>
-<script>
-    $(document).ready(function() {
-      $('#vehicleSearchInput').on('input', function() {
-        var searchQuery = $(this).val();
-
-        // Check if searchQuery is not empty
-        if(searchQuery.trim().length > 0) {
-          // Perform AJAX request
-          $.ajax({
-            url: '/search/vehicles', // Adjust this URL to your search endpoint
-            type: 'GET',
-            data: {
-              query: searchQuery
-            },
-            success: function(response) {
-              // Assuming 'response' is a list of vehicles
-              // Clear previous results
-              $('#searchResults').empty();
-
-              // Check if there are results
-              if(response.length > 0) {
-                response.forEach(function(vehicle) {
-                  // Append each vehicle to the searchResults div
-                  // Adjust the content/formatting as needed
-                  $('#searchResults').append(
-                    `<div>
-                      <p>${vehicle.make} ${vehicle.model}</p>
-                      <p>${vehicle.registration}</p>
-                    </div>`
-                  );
-                });
-              } else {
-                $('#searchResults').append('<p>No results found.</p>');
-              }
-            },
-            error: function(error) {
-              // Handle error
-              console.log(error);
-            }
-          });
-        } else {
-          // If search query is empty, clear results
-          $('#searchResults').empty();
-        }
-      });
-    });
-    </script>

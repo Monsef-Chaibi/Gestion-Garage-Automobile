@@ -208,6 +208,18 @@ class AdminController extends Controller
         return response()->json(['message' => 'Vehicle deleted successfully']);
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
 
+        // Perform the search. Adjust the query as needed based on your requirements.
+        $vehicles = Vehicle::where('make', 'like', "%{$query}%")
+                            ->orWhere('model', 'like', "%{$query}%")
+                            ->orWhere('registration', 'like', "%{$query}%")
+                            ->get();
+
+        // Return the search results as JSON
+        return response()->json($vehicles);
+    }
 
 }
