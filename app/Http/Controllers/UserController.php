@@ -47,6 +47,8 @@ class UserController extends Controller
             'password' => Hash::make($request->pass),
         ]);
 
+         // Log the user in
+        Auth::login($user);
         // Log the user in or redirect to a specific page
         return redirect()->route('UserDash')->with('success', 'Account successfully created!');
     }

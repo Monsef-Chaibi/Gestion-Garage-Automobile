@@ -30,7 +30,7 @@ Route::get('/', function () {
     }
     // Show the welcome view to guests (unauthenticated users)
     return view('welcome');
-});
+})->name('Home');
 
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
